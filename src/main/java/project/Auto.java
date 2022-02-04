@@ -2,7 +2,7 @@ package project;
 
 import java.util.Objects;
 
-public class Auto {
+public class Auto implements Comparable<Auto> {
     private String name;
     private int firstPosition;
     private int speed;
@@ -41,5 +41,10 @@ public class Auto {
     @Override
     public String toString() {
         return "Auto: " + "name= " + name + ", firstPosition= " + firstPosition + ", speed= " + speed;
+    }
+
+    @Override
+    public int compareTo(Auto a) {
+        return this.getSpeed() - a.getSpeed();
     }
 }
